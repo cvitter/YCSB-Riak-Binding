@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="Craigs-MacBook-Air.local" name="com.yahoo.ycsb.db.RiakUtilsTest" tests="7" failures="0" timestamp="21 Nov 2014 22:09:29 GMT" time="0.059" errors="0">
+  <testcase name="testIntegerByteConversion" time="0.019" classname="com.yahoo.ycsb.db.RiakUtilsTest"/>
+  <testcase name="testIntegerByteConversion" time="0.0" classname="com.yahoo.ycsb.db.RiakUtilsTest"/>
+  <testcase name="testIntegerByteConversion" time="0.0" classname="com.yahoo.ycsb.db.RiakUtilsTest"/>
+  <testcase name="testIntegerByteConversion" time="0.001" classname="com.yahoo.ycsb.db.RiakUtilsTest"/>
+  <testcase name="testIntegerByteConversion" time="0.0" classname="com.yahoo.ycsb.db.RiakUtilsTest"/>
+  <testcase name="testMerge" time="0.001" classname="com.yahoo.ycsb.db.RiakUtilsTest"/>
+  <testcase name="testTableSerialization" time="0.001" classname="com.yahoo.ycsb.db.RiakUtilsTest"/>
+</testsuite>

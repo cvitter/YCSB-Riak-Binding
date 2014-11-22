@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="59" started-at="2014-11-21T17:09:29Z" finished-at="2014-11-21T17:09:29Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="59" started-at="2014-11-21T17:09:29Z" finished-at="2014-11-21T17:09:29Z">
+      <class name="com.yahoo.ycsb.db.RiakUtilsTest">
+        <test-method status="PASS" signature="testIntegerByteConversion(int)" name="testIntegerByteConversion" duration-ms="19" started-at="2014-11-21T17:09:29Z" finished-at="2014-11-21T17:09:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="testIntegerByteConversion(int)" name="testIntegerByteConversion" duration-ms="0" started-at="2014-11-21T17:09:29Z" finished-at="2014-11-21T17:09:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="testIntegerByteConversion(int)" name="testIntegerByteConversion" duration-ms="1" started-at="2014-11-21T17:09:29Z" finished-at="2014-11-21T17:09:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="testIntegerByteConversion(int)" name="testIntegerByteConversion" duration-ms="0" started-at="2014-11-21T17:09:29Z" finished-at="2014-11-21T17:09:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[-1]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="testIntegerByteConversion(int)" name="testIntegerByteConversion" duration-ms="0" started-at="2014-11-21T17:09:29Z" finished-at="2014-11-21T17:09:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[-1000]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="testMerge(java.util.Map, java.util.Map, java.util.Map)" name="testMerge" duration-ms="1" started-at="2014-11-21T17:09:29Z" finished-at="2014-11-21T17:09:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{key2=bar, key1=foo}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{key3=goo, key1=zoo}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{key3=goo, key2=bar, key1=zoo}]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="testTableSerialization(java.util.HashMap)" name="testTableSerialization" duration-ms="1" started-at="2014-11-21T17:09:29Z" finished-at="2014-11-21T17:09:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{foo=}]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>
