@@ -7,12 +7,11 @@ Implement the Riak Client
 ----------------------------
 The following directions will help you get started with benchmarking Riak using the YCCB project and Riak client.
 
-<ol>
-<li>Download the YCSB project from https://github.com/brianfrankcooper/YCSB and extract the contents onto the machine, or machines, you plan to execute the project from. <b>Note</b>: YCSB requires Java and Maven.</li>
+Download the YCSB project from https://github.com/brianfrankcooper/YCSB and extract the contents onto the machine, or machines, you plan to execute the project from. <b>Note</b>: YCSB requires Java and Maven.
 
-<li>Download the YCSB-Riak-Binding project and copy the Riak folder into the YCSB folder.</li>
+Download the YCSB-Riak-Binding project and copy the Riak folder into the YCSB folder.
 
-<li>Modify the following sections of the YCSB's POM file to add the Riak client:</li>
+Modify the following sections of the YCSB's POM file to add the Riak client:
 
 ```
 <properties>
@@ -30,7 +29,7 @@ The following directions will help you get started with benchmarking Riak using 
 </modules>
 ```
 
-<li>Perform the following operations on your Riak cluster to configure Riak for the benchmarks:</li>
+Perform the following operations on your Riak cluster to configure Riak for the benchmarks:
 
 Upload the Solr search schema used to support YCSB's scan operation (<b>Note</b>: update the URL and file path to match your environment.)
 ```
@@ -44,10 +43,8 @@ riak-admin bucket-type create ycsb '{"props":{"search_index":"ycsb"}}'
 riak-admin bucket-type activate ycsb
 ```  
 
+Modify NODES_ARRAY in RiakDBClient.java
 
-<li>Modify NODES_ARRAY in RiakDBClient.java</li>
+Build YCSB
 
-<li>Build YCSB</li>
-
-<li>Run a workload</li>
-</ol>
+Run a workload
