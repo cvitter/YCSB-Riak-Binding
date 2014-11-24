@@ -5,15 +5,19 @@ The Riak YCSB client is designed to work with the Yahoo! Cloud System Benchmark 
 
 Implement the Riak Client
 ----------------------------
+The following directions will help you get started with benchmarking Riak using the YCCB porject and Riak client.
 
+1. Download the YCSB project from https://github.com/brianfrankcooper/YCSB and extract the contents onto the machine, or machines, you plan to execute the project from. <b>Note</b>: YCSB requires Java and Maven.
 
-1. Add the Riak client to YCSB's POM file
+2. Download the YCSB-Riak-Binding project and copy the Riak folder into the YCSB folder.
 
-2. Modify NODES_ARRAY in RiakDBClient.java
+2. Add the Riak client to YCSB's POM file
 
-3. Build YCSB
+3. Modify NODES_ARRAY in RiakDBClient.java
 
-4. Run a workload
+4. Build YCSB
+
+5. Run a workload
 
 
 
