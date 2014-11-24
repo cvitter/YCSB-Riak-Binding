@@ -32,6 +32,7 @@ The following directions will help you get started with benchmarking Riak using 
 4. Perform the following operations on your Riak cluster to configure Riak for the benchmarks:
 
   A. Upload the Solr search schema used to support YCSB's scan operation (<b>Note</b>: update the URL and file path to match your environment.)
+  
   B. Create the "ycsb" bucket type.
 ```
 curl -XPUT "http://localhost:8098/search/schema/ycsb" \
