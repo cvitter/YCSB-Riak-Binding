@@ -38,7 +38,11 @@ curl -XPUT "http://localhost:8098/search/schema/ycsb" \
   --data-binary @/Users/user/git/YCSB-Riak-Binding/riak/yz_schema/yscb-schema.xml
 ```
 
-  B.
+  B. Create the YCSB bucket type with the following commands:
+```
+riak-admin bucket-type create ycsb '{"props":{"search_index":"ycsb"}}'
+riak-admin bucket-type activate ycsb
+```  
 
 
 5. Modify NODES_ARRAY in RiakDBClient.java
