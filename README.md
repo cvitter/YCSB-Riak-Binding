@@ -32,7 +32,7 @@ The following directions will help you get started with benchmarking Riak using 
 * Perform the following operations on your Riak cluster to configure Riak for the benchmarks:
 
 <blockquote>
-Upload the Solr search schema used to support YCSB's scan operation (<b>Note</b>: update the URL and file path to match your environment.)
+Upload the Solr search schema used to support YCSB's scan operation to one of the nodes in your cluster. (<b>Note</b>: update the URL and file path to match your environment.)
 </blockquote>
 ```
 curl -XPUT "http://localhost:8098/search/schema/ycsb" \
@@ -40,7 +40,7 @@ curl -XPUT "http://localhost:8098/search/schema/ycsb" \
   --data-binary @/Users/user/git/YCSB-Riak-Binding/riak/yz_schema/yscb-schema.xml
 ```
 <blockquote>
-Create the "ycsb" bucket type and assign the ycsb search index to the bucket type.
+Create the "ycsb" bucket type and assign the ycsb search index to the bucket type by logging into one of the nodes in your cluster and run the following riak-admin commands:
 </blockquote>
 ```
 riak-admin bucket-type create ycsb '{"props":{"search_index":"ycsb"}}'
