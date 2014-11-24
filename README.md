@@ -11,13 +11,30 @@ The following directions will help you get started with benchmarking Riak using 
 
 2. Download the YCSB-Riak-Binding project and copy the Riak folder into the YCSB folder.
 
-2. Add the Riak client to YCSB's POM file
+3. Modify the following sections of the YCSB's POM file to add the Riak client:
 
-3. Modify NODES_ARRAY in RiakDBClient.java
+```
+<properties>
+  ...
+  <riak.version>2.0.2</riak.version>
+  ...
+</properties>
+```
 
-4. Build YCSB
+```
+<modules>
+  ...
+  <module>riak</module>
+  ...
+</modules>
+```
 
-5. Run a workload
+
+4. Modify NODES_ARRAY in RiakDBClient.java
+
+5. Build YCSB
+
+6. Run a workload
 
 
 
