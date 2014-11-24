@@ -47,9 +47,21 @@ riak-admin bucket-type create ycsb '{"props":{"search_index":"ycsb"}}'
 riak-admin bucket-type activate ycsb
 ```  
 
+* Modify NODES_ARRAY in RiakDBClient.java to include all of the nodes in your Riak test cluster.
+```
+// Array of nodes in the Riak cluster or load balancer in front of the cluster
+private static final String[] NODES_ARRAY = {"127.0.0.1"};
+```
 
-* Modify NODES_ARRAY in RiakDBClient.java
+* Build the YCSB project by running the following command in the YCSB root
+```
+mvn clean package
+```
 
-* Build YCSB
+* Load and run a YCSB workload using the Riak client:
+```
+./bin/ycsb load riak -P workloads/workloada
+./bin/ycsb run riak -P workloads/workloada
+```
 
-* Run a workload
+<b>Note</b>: For more information on workloads and how to run them please see: https://github.com/brianfrankcooper/YCSB/wiki/Running-a-Workload
