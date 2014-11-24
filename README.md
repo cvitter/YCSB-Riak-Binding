@@ -3,7 +3,7 @@ Riak Client for Yahoo! Cloud System Benchmark (YCSB)
 
 The Riak YCSB client is designed to work with the Yahoo! Cloud System Benchmark (YCSB) project (https://github.com/brianfrankcooper/YCSB) to support performance testing for the 2.0.X line of the Riak database. 
 
-Implement the Riak Client
+How to Implement the Riak Client
 ----------------------------
 The following directions will help you get started with benchmarking Riak using the YCCB project and Riak client.
 
