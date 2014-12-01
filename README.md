@@ -41,6 +41,13 @@ curl -XPUT "http://localhost:8098/search/schema/ycsb" \
   -H'content-type:application/xml' \
   --data-binary @/Users/user/git/YCSB-Riak-Binding/riak/yz_schema/yscb-schema.xml
 ```
+Create the "ycsb" search index that uses the schema that we just uploaded to Riak.
+```
+curl -i -XPUT http://localhost:8098/search/index/ycsb \
+  -H 'content-type: application/json' \
+  -d '{"schema":"ycsb"}'
+```
+
 <blockquote>
 Create the "ycsb" bucket type and assign the ycsb search index to the bucket type by logging into one of the nodes in your cluster and run the following riak-admin commands:
 </blockquote>
