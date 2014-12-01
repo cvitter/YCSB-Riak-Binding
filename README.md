@@ -1,7 +1,9 @@
 Riak Client for Yahoo! Cloud System Benchmark (YCSB)
 --------------------------------------------------------
 
-The Riak YCSB client is designed to work with the Yahoo! Cloud System Benchmark (YCSB) project (https://github.com/brianfrankcooper/YCSB) to support performance testing for the 2.0.X line of the Riak database. 
+The Riak YCSB client is designed to work with the Yahoo! Cloud System Benchmark (YCSB) project (https://github.com/brianfrankcooper/YCSB) to support performance testing for the 2.0.X line of the Riak database.
+
+<b>Note</b>: In order to support YCSB's scan operation you must enable Riak Search on every node within your cluster. For instructions on enabling Search see: http://docs.basho.com/riak/2.0.2/ops/advanced/configs/search/
 
 How to Implement the Riak Client
 ----------------------------
