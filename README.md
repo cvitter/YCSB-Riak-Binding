@@ -36,12 +36,15 @@ The following directions will help you get started with benchmarking Riak using 
 <blockquote>
 Upload the Solr search schema used to support YCSB's scan operation to one of the nodes in your cluster. (<b>Note</b>: update the URL and file path to match your environment.)
 </blockquote>
+
 ```
 curl -XPUT "http://localhost:8098/search/schema/ycsb" \
   -H'content-type:application/xml' \
   --data-binary @/Users/user/git/YCSB-Riak-Binding/riak/yz_schema/yscb-schema.xml
 ```
-Create the "ycsb" search index that uses the schema that we just uploaded to Riak.
+
+<blockquote>Create the "ycsb" search index that uses the schema that we just uploaded to Riak.</blockquote>
+
 ```
 curl -i -XPUT http://localhost:8098/search/index/ycsb \
   -H 'content-type: application/json' \
@@ -51,23 +54,27 @@ curl -i -XPUT http://localhost:8098/search/index/ycsb \
 <blockquote>
 Create the "ycsb" bucket type and assign the ycsb search index to the bucket type by logging into one of the nodes in your cluster and run the following riak-admin commands:
 </blockquote>
+
 ```
 riak-admin bucket-type create ycsb '{"props":{"search_index":"ycsb"}}'
 riak-admin bucket-type activate ycsb
 ```  
 
 * Modify NODES_ARRAY in RiakDBClient.java to include all of the nodes in your Riak test cluster.
+
 ```
 // Array of nodes in the Riak cluster or load balancer in front of the cluster
 private static final String[] NODES_ARRAY = {"127.0.0.1"};
 ```
 
 * Build the YCSB project by running the following command in the YCSB root
+
 ```
 mvn clean package
 ```
 
 * Load and run a YCSB workload using the Riak client:
+
 ```
 ./bin/ycsb load riak -P workloads/workloada
 ./bin/ycsb run riak -P workloads/workloada
