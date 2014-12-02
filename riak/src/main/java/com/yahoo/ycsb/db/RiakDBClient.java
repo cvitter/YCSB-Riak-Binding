@@ -52,23 +52,22 @@ import static com.yahoo.ycsb.db.RiakUtils.*;
  * @author Basho Technologies, Inc.
  */
 public final class RiakDBClient extends DB {
-	
-	public static final String VERBOSE="basicdb.verbose";
-	public static final String VERBOSE_DEFAULT="true";
-	private boolean verbose;
-	
-	private RiakClient riakClient;
-	private RiakCluster riakCluster;
-	
-	// All data will be stored under the "ycsb" bucket type by default, i.e.:
-	// http://serverip:8098/types/ycsb/buckets/usertable/
+
+	// Edit NODES_ARRAY:
+	// Array of nodes in the Riak cluster or load balancer in front of the cluster
+	// e.g.: {"127.0.0.1","127.0.0.2","127.0.0.3","127.0.0.4","127.0.0.5"}
+	private static final String[] NODES_ARRAY = {"127.0.0.1"};
+
+	// Note: DEFAULT_BUCKET_TYPE and SEARCH_INDEX values are set when configuring
+	// the Riak cluster as described in the project README.md
 	private static final String DEFAULT_BUCKET_TYPE = "ycsb";
-	
-	// 
 	private static final String SEARCH_INDEX = "ycsb";
 	
-	// Array of nodes in the Riak cluster or load balancer in front of the cluster
-	private static final String[] NODES_ARRAY = {"127.0.0.1"};
+	public static final String VERBOSE = "basicdb.verbose";
+	public static final String VERBOSE_DEFAULT = "true";
+	private boolean verbose;
+	private RiakClient riakClient;
+	private RiakCluster riakCluster;
 	
 	/**
 	 * Read a record from the database. Each field/value pair from the result will be stored in a HashMap.
@@ -99,6 +98,9 @@ public final class RiakDBClient extends DB {
 	/**
 	 * Perform a range scan for a set of records in the database. Each field/value pair from the result will be stored in a HashMap.
 	 *
+	 * Note: Riak's Solr integration (http://docs.basho.com/riak/latest/intro-v20/#Riak-Search-2-0-codename-Yokozuna-)
+	 * is used to implement the scan operation as Riak does not have a native scan operation.
+	 *
 	 * @param table The name of the table (Riak bucket)
 	 * @param startkey The record key of the first record to read.
 	 * @param recordcount The number of records to read
@@ -108,7 +110,6 @@ public final class RiakDBClient extends DB {
 	 */
 	@Override
 	public int scan(String table, String startkey, int recordcount, Set<String> fields, Vector<HashMap<String, ByteIterator>> result) {
-		// 
 		String query = "_yz_rk:[" + startkey + " TO *]";
 		SearchOperation searchOp = new SearchOperation
 			.Builder(BinaryValue.create(SEARCH_INDEX), query)
@@ -242,7 +243,6 @@ public final class RiakDBClient extends DB {
 	
 
 	public void init() throws DBException {
-		// Display Test Properties for Reference
 		verbose = Boolean.parseBoolean(getProperties().getProperty(VERBOSE, VERBOSE_DEFAULT));
 		if (verbose)
 		{
@@ -267,11 +267,9 @@ public final class RiakDBClient extends DB {
 	        riakCluster.start();
 	        riakClient = new RiakClient(riakCluster);
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
 
 	public void cleanup() throws DBException
 	{
