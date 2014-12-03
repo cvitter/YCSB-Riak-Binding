@@ -56,7 +56,7 @@ Create the "ycsb" bucket type and assign the ycsb search index to the bucket typ
 </blockquote>
 
 ```
-riak-admin bucket-type create ycsb '{"props":{"search_index":"ycsb"}}'
+riak-admin bucket-type create ycsb '{"props":{"search_index":"ycsb","allow_mult":"false"}}'
 riak-admin bucket-type activate ycsb
 ```  
 
