@@ -54,8 +54,10 @@ import static com.yahoo.ycsb.db.RiakUtils.*;
 public final class RiakDBClient extends DB {
 
 	// Edit NODES_ARRAY:
-	// Array of nodes in the Riak cluster or load balancer in front of the cluster
-	// e.g.: {"127.0.0.1","127.0.0.2","127.0.0.3","127.0.0.4","127.0.0.5"}
+	// Array of nodes in the Riak cluster or load balancer in front of the cluster, 
+	// IP Addresses or Fully Qualified Domain Names
+	// e.g.: {"127.0.0.1","127.0.0.2","127.0.0.3","127.0.0.4","127.0.0.5"} or
+	// {"riak1.mydomain.com","riak2.mydomain.com","riak3.mydomain.com","riak4.mydomain.com","riak5.mydomain.com"}
 	private static final String[] NODES_ARRAY = {"127.0.0.1"};
 
 	// Note: DEFAULT_BUCKET_TYPE and SEARCH_INDEX values are set when configuring
