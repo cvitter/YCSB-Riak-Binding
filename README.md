@@ -31,6 +31,15 @@ The following directions will help you get started with benchmarking Riak using 
 </modules>
 ```
 
+* Modify the <b>ycsb</b> file in the YCSB <b>bin</b> folder to add the Riak client in the DATABASES section as shown below::
+```
+DATABASES = {
+    "basic"        : "com.yahoo.ycsb.BasicDB",
+    ...
+    "riak"         : "com.yahoo.ycsb.db.RiakDBClient"
+}
+```
+
 * Perform the following operations on your Riak cluster to configure Riak for the benchmarks:
 
 <blockquote>
