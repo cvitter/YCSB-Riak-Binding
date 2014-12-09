@@ -125,7 +125,7 @@ public final class RiakDBClient extends DB {
 			List<Map<String, List<String>>> results = response.getAllResults();
 			
 			for (int i = 0; i < results.size(); i++ ) {
-				Map<String, List<String>> doc = results.get(0);
+				Map<String, List<String>> doc = results.get(i);
 				String key = doc.get("_yz_rk").get(0);
 				final Location location = new Location(new Namespace(DEFAULT_BUCKET_TYPE, table), key);
 	            final FetchValue fv = new FetchValue.Builder(location).build();
