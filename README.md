@@ -1,3 +1,5 @@
+Note: See https://github.com/basho-labs/YCSB/tree/master/riak for the most recent version of this code.
+
 Riak Client for Yahoo! Cloud System Benchmark (YCSB)
 --------------------------------------------------------
 
